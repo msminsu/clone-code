@@ -1,0 +1,59 @@
+html.swipers{
+    width: 100%;
+    height:100% !important;
+    body{
+        width: 100%;
+        height:100% !important;
+    }
+    .remote_menu{
+        .remote_arrow{ bottom: 3%; }
+        .menu_list{
+            > li.first{
+                text-align: left;
+                margin-top: 40px;
+                position: relative;
+                a{ color: #ddb382; font-weight: normal; text-decoration: none; font-size: 25px; letter-spacing: -3px; }
+            }
+        }
+    }
+    .container{
+        width:100%; height:100%;
+        position:relative;
+        #contents{
+            height:100%;
+            #main-swiper{
+                overflow:auto; height: 100%;
+                .swiper-slide{
+                    overflow:hidden;
+                }
+            }
+            >.swiper-pagination{
+                width: 70px;
+                font: 14px/20px 'Arial Regular'; color: rgba(255,255,255,0.3); text-align:left; letter-spacing:-1px;
+                padding-left: 5%;
+                position: fixed; left: 0; bottom: 2.5%; z-index:11;
+                &-current{ color: #fff; }
+            }
+            .guide{
+                width: 100%; height: 100%;
+                background:url('../img/ico_swiper_guide_btype.png') no-repeat center center; background-size: 173px;
+                position:absolute; left: 0; top: 0; z-index: 1;
+                &.type{
+                    background:url('../img/ico_swiper_guide_ctype.png') no-repeat center center; background-size: 173px;
+                }
+            }
+        }
+    }
+    footer{
+        display:none; width: 52.5px; height: 27px;
+        font: 0/0 a; text-shadow: none; color: transparent;
+        margin-left: -26.25px;
+        position: absolute; left: 50%; bottom: 2.5%; z-index:1;
+        background:url('../img/bg_footer.png') no-repeat center center; background-size: 52.5px auto;
+        .copy-wrap{
+            width: 27px;
+            margin-left: 33.5px;
+            position:absolute; left: 50%; bottom: 0;
+        }
+    }
+}
