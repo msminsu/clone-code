@@ -1,0 +1,623 @@
+@import "../util/mixin/mixin";
+
+.warrior{
+    position:absolute;
+    top:33px;
+    right:0;
+    bottom:0;
+    left:0;
+    overflow:hidden;
+    background:#000;
+
+    &-info-wrap{
+        width:100%;
+        height:100%;
+        transform:translateZ(0);
+    }
+
+    &__info{
+        position:absolute;
+        top:0;
+        bottom:0;
+        cursor:pointer;
+        box-sizing:border-box;
+
+        &--1{
+            z-index:4;
+            left:-65%;
+            right:65%;
+            transform:skewX(-19deg) translateX(-2000px);
+        }
+
+        &--2{
+            z-index:3;
+            left:35%;
+            right:35%;
+            transform:skewX(-19deg);
+            opacity:0;
+        }
+
+        &--3{
+            z-index:4;
+            left:65%;
+            right:-65%;
+            transform:skewX(-19deg) translateX(2000px);
+        }
+
+        &-bg{
+            height:100%;
+            position:absolute;
+            left:50%;
+            top:0;
+            transform:skewX(19deg);
+
+            &--1{
+                @include bg($bg:"warrior/warrior-intro-bg-1.png", $position:center right);
+                background-size:cover;
+            }
+            &--2{
+                @include bg($bg:"warrior/warrior-intro-bg-2.jpg", $position:center center);
+                background-size:cover;
+            }
+            &--3{
+                @include bg($bg:"warrior/warrior-intro-bg-3.png", $position:center left);
+                background-size:cover;
+            }
+        }
+
+        &-char{
+            position:absolute;
+            z-index:13;
+
+            &--1{
+                @include set-area($width:1287, $height:979, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-char-1.png");
+                top:50%;
+                right:0;
+                margin-right:200px;
+                margin-top:-500px;
+                transform:skewX(19deg) translateY(400px);
+                opacity:0;
+            }
+            &--2{
+                @include set-area($width:1714, $height:904, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-char-2.png");
+                top:50%;
+                left:50%;
+                margin-left:-1000px;
+                margin-top:-452px;
+                transform:skewX(19deg) translateY(-500px);
+                opacity:0;
+            }
+            &--3{
+                @include set-area($width:1785, $height:1185, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-char-3.png");
+                top:50%;
+                left:0;
+                margin-left:150px;
+                margin-top:-700px;
+                transform:skewX(19deg) translateX(400px) translateY(100px);
+                opacity:0;
+            }
+        }
+
+        &-text{
+            position:absolute;
+            z-index:13;
+            transform:skewX(19deg) translateX(150px);
+            opacity:0;
+
+            &--1{
+                @include set-area($width:196, $height:149, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-tit-1.png");
+                top:50%;
+                right:0;
+                margin-right:220px;
+                margin-top:-75px;
+            }
+            &--2{
+                @include set-area($width:250, $height:142, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-tit-2.png");
+                top:50%;
+                left:50%;
+                margin-left:-125px;
+                margin-top:-71px;
+            }
+            &--3{
+                @include set-area($width:212, $height:152, $indent:true, $position:absolute, $bg:"warrior/warrior-intro-tit-3.png");
+                top:50%;
+                left:0;
+                margin-left:220px;
+                margin-top:-76px;
+            }
+        }
+    }
+
+    &__detail{
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        opacity:0;
+
+        &--1{
+            left:-50%;
+            @include bg($bg:"warrior/warrior-stroy-bg.jpg", $position:center center);
+            background-size:cover;
+        }
+
+        &--2{
+        }
+
+        &--3{
+        }
+
+        .story{
+            &-text{
+                width:100%;
+                height:100%;
+
+                &__1{
+                    @include set-area($width:640, $height:298, $indent:true, $position:absolute, $bg:"warrior/warrior-story-text.png");
+                    top:50%;
+                    left:50%;
+                    margin-left:-320px;
+                    margin-top:-200px;
+                    transform:translateX(-1500px);
+                    opacity:0;
+                }
+
+                &__2{
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    margin-left:-620px;
+                    margin-top:-200px;
+                    width:0;
+                    height:298px;
+                    overflow:hidden;
+
+                    &:before{
+                        content:'';
+                        @include set-area($width:640, $height:298, $indent:true, $position:absolute, $bg:"warrior/warrior-story-text.png");
+                        top:0;
+                        left:0;
+                    }
+                }
+            }
+
+            &-button{
+                @include set-area($width:413, $height:117, $indent:true, $position:absolute, $bg:"warrior/warrior-story-button.png");
+                top:50%;
+                left:50%;
+                margin-left:-650px;
+                margin-top:180px;
+                opacity:0;
+                z-index:10;
+            }
+
+            &-char{
+                @include set-area($width:1173, $height:928, $indent:true, $position:absolute, $bg:"warrior/warrior-story-char-1.png");
+                top:50%;
+                left:50%;
+                margin-left:350px;
+                margin-top:-370px;
+                opacity:0;
+                transform:translateX(-1000px);
+            }
+
+            &-deco{
+                position:absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                right:-500px;
+                @include bg($bg:"warrior/warrior-story-deco.png", $position:center right);
+                background-size:auto 100%;
+                opacity:0;
+            }
+        }
+
+        .combat{
+            &-1{
+                position:absolute;
+                top:0;
+                height:100%;
+                width:52%;
+                left:-100%;
+                @include bg($bg:"warrior/warrior-combat-bg-1.png", $position:center right);
+                background-size:cover;
+                cursor:pointer;
+
+                &--out{
+                    .combat-1__text--1{
+                        @include set-area($width:75, $height:112, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-tit-1-on.png");
+                        right:100px;
+                    }
+                }
+
+                &__bg{
+                    opacity:0;
+                    transform:translateZ(0);
+                    width:100%;
+                    height:100%;
+                }
+
+                &__char{
+                    @include set-area($width:979, $height:991, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-char-1.png");
+                    top:50%;
+                    right:-30px;
+                    margin-top:-430px;
+                }
+
+                &__text{
+                    &--1{
+                        @include set-area($width:233, $height:92, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-tit-1-off.png");
+                        top:50%;
+                        right:140px;
+                        margin-top:-80px;
+                        transform:translateX(-800px);
+                        opacity:0;
+                    }
+                    &--2{
+                        @include set-area($width:380, $height:167, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-text-1.png");
+                        top:50%;
+                        left:500px;
+                        margin-top:-180px;
+                        opacity:0;
+                    }
+                }
+            }
+
+            &-2{
+                top:0;
+                height:100%;
+                width:52%;
+                right:-100%;
+                position:absolute;
+                @include bg($bg:"warrior/warrior-combat-bg-2.png", $position:center left);
+                background-size:cover;
+                cursor:pointer;
+
+                &--out{
+                    @include bg($bg:"warrior/warrior-combat-bg-2-on.png", $position:center left);
+                    background-size:cover;
+
+                    .combat-2__text--1{
+                        @include set-area($width:74, $height:114, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-tit-2-on.png");
+                        left:95px;
+                    }
+                }
+
+                &__bg{
+                    opacity:0;
+                    transform:translateZ(0);
+                    width:100%;
+                    height:100%;
+                }
+
+                &__char{
+                    @include set-area($width:713, $height:1511, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-char-2.png");
+                    top:50%;
+                    left:230px;
+                    margin-top:-430px;
+
+                    &--1{opacity:1;}
+                    &--2{opacity:1;}
+                    &--3{opacity:1;}
+                }
+
+                &__text{
+                    &--1{
+                        @include set-area($width:228, $height:80, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-tit-2-off.png");
+                        top:50%;
+                        left:100px;
+                        margin-top:-75px;
+                        transform:translateX(800px);
+                        opacity:0;
+                    }
+
+                    &--2{
+                        @include set-area($width:441, $height:171, $indent:true, $position:absolute, $bg:"warrior/warrior-combat-text-2.png");
+                        top:50%;
+                        right:500px;
+                        margin-top:-180px;
+                        opacity:0;
+                    }
+                }
+            }
+        }
+
+        .stance{
+            &-tit{
+                @include set-area($width:322, $height:81, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-tit-3.png");
+                top:50%;
+                left:50%;
+                margin-left:-161px;
+                margin-top:-40px;
+                z-index:3;
+            }
+
+            &-1{
+                position:absolute;
+                top:0;
+                left:200%;
+                height:100%;
+                width:100%;
+                cursor:pointer;
+                z-index:2;
+
+                #stance-1__player{
+                    background:none;
+                    top:50%;
+                    right:-192px;
+                    margin-top:-719px;
+                    opacity:0;
+                    transform:translateZ(0);
+                }
+
+                &__bg{
+                    position:absolute;
+                    top:50%;
+                    right:50%;
+                    width:2560px;
+                    height:1440px;
+                    margin-top:-720px;
+                    margin-right:-226px;
+
+                    &-img{
+                        @include bg($bg:"warrior/warrior-stance-bg-1.png", $position:top right);
+                        width:2560px;
+                        height:1440px;
+                        position:absolute;
+                        top:0;
+                        left:0;
+                    }
+                }
+
+                &__char{
+                    @include set-area($width:1388, $height:1050, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-char-1.png");
+                    top:50%;
+                    right:50%;
+                    margin-top:-650px;
+                    opacity:0;
+                    transform:translateX(500px);
+                }
+
+                &__text{
+                    @include set-area($width:272, $height:149, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-text-1.png");
+                    top:50%;
+                    right:50%;
+                    margin-top:-370px;
+                    margin-right:55px;
+                    opacity:0;
+                }
+
+                &__tit{
+                    @include set-area($width:272, $height:61, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-tit-1.png");
+                    top:50%;
+                    right:50%;
+                    margin-top:-337px;
+                    margin-left:29px;
+                    opacity:0;
+                    transform:translateX(-200px);
+                }
+
+                video{
+                    width:auto !important;
+                    height:auto !important;
+                }
+            }
+
+            &-2{
+                position:absolute;
+                top:0;
+                left:200%;
+                height:100%;
+                width:100%;
+                cursor:pointer;
+                z-index:1;
+
+                #stance-2__player{
+                    background:none;
+                    top:50%;
+                    right:379px;
+                    margin-top:-750px;
+                    opacity:0;
+                    transform:translateZ(0);
+                }
+
+                &__bg{
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    width:2560px;
+                    height:1440px;
+                    margin-top:-720px;
+                    margin-left:-267px;
+
+                    &-img{
+                        @include bg($bg:"warrior/warrior-stance-bg-2.png", $position:top left);
+                        width:2560px;
+                        height:1440px;
+                        position:absolute;
+                        top:0;
+                        left:0;
+                    }
+                }
+                &__char{
+                    @include set-area($width:1434, $height:1276, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-char-2.png");
+                    top:50%;
+                    left:50%;
+                    margin-top:-567px;
+                    margin-left:129px;
+                    opacity:0;
+                    transform:translateX(500px);
+                }
+
+                &__text{
+                    @include set-area($width:322, $height:147, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-text-2.png");
+                    top:50%;
+                    left:50%;
+                    margin-top:203px;
+                    margin-left:65px;
+                    opacity:0;
+                }
+
+                &__tit{
+                    @include set-area($width:272, $height:61, $indent:true, $position:absolute, $bg:"warrior/warrior-stance-tit-2.png");
+                    top:50%;
+                    left:50%;
+                    margin-top:235px;
+                    margin-left:30px;
+                    opacity:0;
+                    transform:translateX(200px);
+                }
+
+                video{
+                    width:auto !important;
+                    height:auto !important;
+                }
+            }
+
+            &-ctrl{
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index:10;
+
+                &__1{
+                    position:absolute;
+                    overflow:hidden;
+                    cursor:pointer;
+                    height:100%;
+                    left:-50%;
+                    right:50%;
+                    transform:skewX(-18deg);
+                }
+                &__2{
+                    position:absolute;
+                    overflow:hidden;
+                    cursor:pointer;
+                    height:100%;
+                    left:50%;
+                    right:-50%;
+                    transform:skewX(-18deg);
+                }
+            }
+        }
+    }
+
+    &-ctrl{
+        position:absolute;
+        width:100%;
+        height:100%;
+        z-index:10;
+
+        &__1{
+            position:absolute;
+            overflow:hidden;
+            cursor:pointer;
+            height:100%;
+            left:-65%;
+            right:65%;
+            transform:skewX(-19deg);
+        }
+        &__2{
+            position:absolute;
+            overflow:hidden;
+            cursor:pointer;
+            height:100%;
+            left:35%;
+            right:35%;
+            transform:skewX(-19deg);
+        }
+        &__3{
+            position:absolute;
+            overflow:hidden;
+            cursor:pointer;
+            height:100%;
+            left:65%;
+            right:-65%;
+            transform:skewX(-19deg);
+        }
+    }
+
+    &__player-dim{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        @include bg($bg:"warrior/warrior-player-dim.png", $position:center center);
+        background-size:cover;
+    }
+
+    .player{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+    }
+
+    .sub_nav{
+        z-index:10;
+        position:absolute;
+        height:14px;
+        display:none;
+        opacity:0;
+
+        li{
+            height:14px;
+
+            &.warrior1{
+                width:77px;
+                button{
+                    width:77px;
+                    background-position:0 0;
+                }
+            }
+            &.warrior2{
+                width:77px;
+                button{
+                    width:77px;
+                    background-position:-77px 0;
+                }
+            }
+            &.warrior3{
+                width:77px;
+                button{
+                    width:77px;
+                    background-position:-154px 0;
+                }
+            }
+
+            &:hover.warrior1,
+            &.on.warrior1{
+                button{
+                    background-position:0 -14px;
+                }
+            }
+            &:hover.warrior2,
+            &.on.warrior2{
+                button{
+                    background-position:-77px -14px;
+                }
+            }
+            &:hover.warrior3,
+            &.on.warrior3{
+                button{
+                    background-position:-154px -14px;
+                }
+            }
+            button{
+                margin:19px auto 0; height:14px;
+                @include bg($bg:"warrior/warrior_list.png"); transition:0.5s;
+            }
+        }
+    }
+
+    &__deco{
+        @include set-area($width:145, $height:92, $indent:true, $position:absolute, $bg:"warrior/warrior-title.png");
+        position:absolute;
+        bottom:100px;
+        left:50%;
+        margin-left:-73px;
+        z-index:10;
+    }
+}

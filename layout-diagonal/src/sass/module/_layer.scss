@@ -1,0 +1,20 @@
+.layer{
+	display:none;
+	position:absolute;
+	overflow:hidden;
+	text-indent:$indentValue;
+	
+	.btn-close-layer{
+		display:block;
+		overflow:hidden;
+		text-indent:$indentValue;
+		width:20px;
+		height:20px;
+		@include position($top:20px, $right:55px);
+	}
+}
+
+//#layer-1{ @include bg($bg:'bg_layer_1.png'); width:913px; height:804px; }
+//
+//#layer-2{ @include bg($bg:'bg_layer_2.png'); width:913px; height:804px; }
+

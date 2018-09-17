@@ -1,0 +1,138 @@
+@import "gnb";
+@import "header";
+@import "navi";
+
+.container{width:100%; height:100%; position:absolute; top:0; left:0; overflow:hidden;}
+
+/* remote_wrap */
+.remote_wrap {@include hide-text; @include position-abs($width:214px, $height:100%, $right:-214px, $top:0); background-color:rgba(0, 0, 0, 0.51); overflow:visible; z-index:301; transition:0.5s;
+    .btn_arrow {@include position-abs($width:38px, $height:68px, $left:-38px, $top:536px); @include bg($bg:"common/remote_arrow.png", $position:0 0);}
+    &.on {right:0;
+        .btn_arrow {background-position:-39px 0;}
+    }
+    .remote_nav {margin:118px auto 0; width:200px; height:941px;
+        li {margin-top:6px; width:100%; height:105px; position:relative; @include bg($bg:"common/remote_menu_bg.png", $position:0 0);
+            &:first-child {margin-top:0;}
+            &:nth-child(1) {background-position:0 0;}
+            &:nth-child(2) {background-position:0 -108px;}
+            &:nth-child(3) {background-position:0 -216px;}
+            &:nth-child(4) {background-position:0 -324px;}
+            &:nth-child(5) {background-position:0 -433px;}
+            &:nth-child(6) {background-position:0 -541px;}
+            &:nth-child(7) {background-position:0 -649px;}
+            &:nth-child(8) {background-position:0 -757px;}
+            a {width:100%; height:100%; display:block;
+                &:before, &:after {content:""; width:100%; height:100%; display:block; position:absolute; left:0; top:0; box-sizing:border-box; transform:scale(0); transition:0.5s; }
+                &:before {border-bottom:3px solid #bf0101; border-left:3px solid #bf0101; transform-origin:0 100%;}
+                &:after {border-top:3px solid #bf0101; border-right:3px solid #bf0101; transform-origin:100% 0;}
+                &:hover:before, &:hover:after {
+                    transform:scale(1);
+                }
+            }
+        }
+    }
+}
+
+/* footer */
+#footer {@include hide-text; @include position-abs($width:348px, $height:32px, $left:50%, $bottom:40px); @include bg($bg:"common/footer_bg.png"); z-index:302;
+    >.sns_list {position:absolute; top:2px; right:3px; overflow:hidden;
+        >li {float:left;
+            >a {width:25px; height:27px; display:block;}
+        }
+    }
+}
+
+/* sub_nav */
+.sub_nav {text-align:center; font-size:0; @include position-abs($width:100%, $height:33px, $left:0, $bottom:154px); z-index:5;
+    li {height:100%; display:inline-block; position:relative; cursor:pointer;
+        &:first-child:before {content:""; display:block; @include position-abs($width:78px, $height:1px, $left:-78px, $top:3px); @include bg($bg:"common/layer_menu_line.png");}
+        &:last-child:before {content:""; display:block; @include position-abs($width:78px, $height:1px, $right:-78px, $top:3px); @include bg($bg:"common/layer_menu_line.png"); transform:rotate(180deg);}
+        &:hover, &.on {
+            span {
+                &:before {width:100%; left:0;}
+                &:after {background-position:0 -8px;}
+            }
+        }
+        span {@include position-abs($width:100%, $height:1px, $left:0, $top:3px); background-color:rgba(255, 255, 255, 0.25);
+            &:before {content:""; display:block; @include position-abs($width:0, $height:1px, $left:50%, $top:0); background-color:#e10b0b; transition:0.5s;}
+            &:after {content:""; display:block; @include position-abs($width:29px, $height:7px, $left:50%, $top:-3px); @include bg($bg:"common/layer_menu_bul.png"); transition:0.5s;}
+        }
+        button {height:14px; display:block;}
+    }
+}
+
+/* equalizer */
+.equalizer_wrap {@include position-abs($width:90px, $height:30px, $right:346px, $top:3px);
+    .btn_eq {@include position-abs($width:53px, $height:8px, $left:42px, $top:21px); @include bg($bg:"common/sound_txt.png");
+        &.on {background-position:0 -9px;}
+    }
+    [data-media="audio"] {display:none;}
+}
+#equalizer {width:40px; height:30px; position:relative; overflow:hidden;}
+#equalizer>span {width:3px; height:1px; display:inline-block; bottom:0; position:absolute; background-color:#fff;
+    animation-duration:500ms;
+    animation-play-state:running;
+    animation-direction:alternate;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+}
+
+#equalizer>span.stop {
+    animation:none;
+    animation-name:none;
+}
+
+#equalizer>.bar1 {
+    left:0;
+    animation-name:danceHeight1;
+    animation-delay:300ms;
+}
+#equalizer>.bar2 {
+    left:6px;
+    animation-name:danceHeight2;
+    animation-delay:600ms;
+}
+#equalizer>.bar3 {
+    left:12px;
+    animation-name:danceHeight3;
+    animation-delay:0ms;
+}
+#equalizer>.bar4 {
+    left:18px;
+    animation-name:danceHeight4;
+    animation-delay:1500ms;
+}
+#equalizer>.bar5 {
+    left:24px;
+    animation-name:danceHeight5;
+    animation-delay:1200ms;
+}
+#equalizer>.bar6 {
+    left:30px;
+    animation-name:danceHeight6;
+    animation-delay:900ms;
+}
+@keyframes danceHeight1 {
+    from {height:1px;}
+    to {height:18px;}
+}
+@keyframes danceHeight2 {
+    from {height:1px;}
+    to {height:15px;}
+}
+@keyframes danceHeight3 {
+    from {height:1px;}
+    to {height:22px;}
+}
+@keyframes danceHeight4 {
+    from {height:1px;}
+    to {height:10px;}
+}
+@keyframes danceHeight5 {
+    from {height:1px;}
+    to {height:20px;}
+}
+@keyframes danceHeight6 {
+    from {height:1px;}
+    to {height:15px;}
+}

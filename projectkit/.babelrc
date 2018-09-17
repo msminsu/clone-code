@@ -1,0 +1,26 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": [
+						"last 2 versions",
+						"ie >= 9"
+					]
+				},
+				"modules": false
+			}
+		]
+	],
+	"plugins": [
+		"external-helpers",
+		"transform-object-rest-spread",
+		[
+			"transform-es2015-for-of",
+			{
+				"loose": true
+			}
+		]
+	]
+}

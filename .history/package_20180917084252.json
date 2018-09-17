@@ -1,0 +1,22 @@
+{
+  "name": "layout-diagonal",
+  "version": "1.0.0",
+  "description": "분석하기",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msminsu/clone-code.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/msminsu/clone-code/issues"
+  },
+  "homepage": "https://github.com/msminsu/clone-code#readme"
+}

@@ -1,0 +1,24 @@
+.scene-box{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    overflow:hidden;
+
+    .con{
+        width:100%;
+        height:100%;
+    }
+}
+
+[data-scene]{
+    position:absolute;
+    width:100%; height:100%;
+    z-index:100;
+    overflow:hidden;
+    display:none;
+
+    &.before{ z-index:200 !important; display:block; }
+    &.now{ z-index:300 !important; display:block; }
+}

@@ -1,0 +1,279 @@
+// base
+@import "util/m.variable";
+@import "util/normalize.4.0.0";
+@import "util/mixin/mixin";
+@import "util/reset";
+
+
+html, body{
+	width: 100%;
+	height:100% !important;
+}
+
+body{
+	min-width:320px;
+	padding:0;
+	margin:0;
+	font-family:sans-serif;
+	-webkit-text-size-adjust:none;
+}
+
+img{
+	border:0;
+	width:100%;
+	max-width:100%;
+	vertical-align:top;
+}
+
+ul, ol{ padding:0; }
+
+header, footer, section{
+	@extend .hide;
+}
+
+.hide{
+	position:relative;
+	font:0/0 a;
+	text-shadow:none;
+	color:transparent;
+}
+
+/**
+ * button position
+ */
+[class*="btn-link-"],
+[class*="btn-layer-"]{
+	position:absolute;
+	display:block;
+	overflow:hidden;
+	text-indent:$indentValue;
+	left:50%;
+	z-index:10;
+}
+
+
+.btn{
+	&-link{
+		&-main{
+			@include position-abs($width: 99.5px, $height: 56px, $left: 10px, $top: 10px);
+			@include bg($bg:'m/logo.png');
+			background-size: 99.5px;
+		}
+		&-list{
+			@include position-abs($width: 90.5px, $height: 31px, $left: auto, $right: 10px, $top: 20px);
+			@include bg($bg:'m/btn_update.png');
+			background-size: 90.5px;
+		}
+		&-1{@include position-abs($width: 227.5px, $height: 59.5px, $left: 50%, $bottom: 0);}
+		&-3{@include position-abs($width: 206.5px, $height: 58.5px, $left: 50%, $bottom: 0);}
+	}
+}
+
+
+.container{
+	max-width:640px; min-width:320px; width:100%; height:100%;
+	margin:0 auto;
+	position:relative;
+	#contents{
+		height:100%;
+		.section{
+			&-1{
+				.cont{
+					@include position-abs($width:250px, $height:293px, $left: 50%, $top: 50%);
+					@include bg($bg:'m/sec_1.png');
+					z-index:1;
+					background-size:250px;
+				}
+			}
+			&-2{
+				.cont{
+					@include position-abs($width:158px, $height:127px, $left: 50%, $top: 55%);
+					@include bg($bg:'m/sec_2.png');
+					z-index:1;
+					background-size:158px;
+				}
+			}
+			&-3{
+				.cont{
+					@include position-abs($width:262px, $height:318px, $left: 50%, $top: 20%);
+					@include bg($bg:'m/sec_3.png');
+					z-index:1;
+					background-size:262px;
+				}
+			}
+			&-4{
+				.cont{
+					@include position-abs($width:167.5px, $height:135px, $left: 48%, $top: 35%);
+					@include bg($bg:'m/sec_4.png');
+					z-index:1;
+					background-size:167.5px;
+				}
+			}
+			&-5{
+				.cont{
+					@include position-abs($width:164.5px, $height:175px, $left: 5%, $top: 15%);
+					@include bg($bg:'m/sec_5.png');
+					z-index:1;
+					background-size:164.5px;
+				}
+			}
+			&-6{
+				.cont{
+					@include position-abs($width:175px, $height:85px, $right: 5%, $top: 15%);
+					@include bg($bg:'m/sec_6.png');
+					z-index:1;
+					background-size:175px;
+				}
+			}
+			&-7{
+				.cont{
+					@include position-abs($width:161px, $height:97px, $left: 5%, $top: 15%);
+					@include bg($bg:'m/sec_7.png');
+					z-index:1;
+					background-size:161px;
+				}
+			}
+			&-8{
+				.cont{
+					@include position-abs($width:278px, $height:354.5px, $left: 50%, $top: 50%);
+					@include bg($bg:'m/sec_8.png');
+					z-index:1;
+					margin-top:-200px;
+					background-size:278px;
+				}
+			}
+			&-9{
+				.cont{
+					@include position-abs($width:290.5px, $height:345px, $left: 50%, $top: 50%);
+					@include bg($bg:'m/sec_9.png');
+					z-index:1;
+					margin-top:-200px;
+					background-size:290.5px;
+				}
+			}
+			&-10{
+				.cont{
+					@include position-abs($width:349.5px, $height:218px, $left: 50%, $top: 50%);
+					@include bg($bg:'m/sec_10.png');
+					z-index:1;
+					background-size:349.5px;
+				}
+			}
+			&-11{
+				.cont{
+					@include position-abs($width:191px, $height:52.5px, $left: 50%, $top: 20%);
+					@include bg($bg:'m/sec_11.png');
+					z-index:1;
+					background-size:191px;
+					.btn-link{
+						@include position-abs($width: 50px, $height: 50px, $left: 50%, $top: 50%);
+					}
+				}
+			}
+			&-12{
+				.cont{
+					@include position-abs($width:294.5px, $height:356.5px, $left: 50%, $top: 50%);
+					@include bg($bg:'m/sec_12.png');
+					z-index:1;
+					margin-top: -190px;
+					background-size:294.5px;
+					ul{
+						padding-top:13%;
+						li{
+							float: left; width: 50%;
+							a{
+								display: block; height: 80px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.swiper{
+			&-container{
+				height: 100%;
+				background:#000;
+				position:static;
+				.guide{
+					@include position-abs($width: 100%, $height: 100%, $left: 0, $top: 0 );
+					@include bg($bg:'m/ico_swiper_guide_btype.png', $position: center center);
+					background-size: 173px;
+					z-index: 1;
+				}
+				img { @include position-abs($top: 0); }
+			}
+			&-pagination{
+				@include position-abs($width: 70px, $left: 0, $bottom: 2.5%);
+				font: 14px/20px 'Arial Regular'; color: rgba(255,255,255,0.3); text-align:left; letter-spacing:-1px;
+				padding-left: 5%;
+				box-sizing: border-box; z-index:10;
+				&-current{ color: #fff; }
+			}
+		}
+		.sub-swiper{
+			overflow:hidden;
+			padding-bottom: 30px;
+			.swiper-button-prev{
+				@include position-abs($width: 30.5px, $height: 30.5px, $left: 0, $top: 50%);
+				@include bg($bg:'m/btn_swiper.png', $position: 0 0);
+				margin-top: -30px;
+				background-size: cover;
+			}
+			.swiper-button-next{
+				@include position-abs($width: 30.5px, $height: 30.5px, $left: auto, $right: 0, $top: 50%);
+				@include bg($bg:'m/btn_swiper.png', $position: 100% 0);
+				margin-top: -30px;
+				background-size: cover;
+			}
+
+			.swiper-pagination{
+				@include position-abs($width: 100%, $bottom: 4%);
+				padding: 0 5%;
+				text-align: center;
+				span{
+					width: 42px; height: 4px;
+					margin: 0 3px;
+					border-radius: 0;
+					background: rgba(255,255,255,0.5);
+					&.swiper-pagination-bullet-active{
+						background:#e10b0b;
+					}
+				}
+			}
+			&-1{
+				@include position-abs($width: 300.5px, $height: 170.5px, $top: 200%, $left: 50%);
+			}
+			&-2{
+				@include position-abs($width: 300.5px, $height: 170.5px, $top: 28%, $left: 50%);
+			}
+		}
+	}
+}
+
+footer{
+	@include position-abs($width: 52.5px, $height: 27px, $left: 50%, $bottom: 2.5%);
+	@include bg($bg:'m/bg_footer.png', $position: center center);
+	display:none;
+	background-size: 52.5px auto;
+	z-index:1;
+	.copy-wrap{
+		@include position-abs($width: 27px, $left: 50%, $bottom: 0);
+		margin-left: 33.5px;
+	}
+}
+
+.remote_menu{
+	.remote_arrow{
+		bottom: 3%;
+	}
+	.menu_list{
+		> li.first{
+			text-align: left;
+			margin-top: 40px;
+			position: relative;
+			a{
+				color: #ddb382; font-weight: normal; text-decoration: none; font-size: 25px; letter-spacing: -3px;
+			}
+		}
+	}
+}

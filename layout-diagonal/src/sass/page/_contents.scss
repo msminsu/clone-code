@@ -1,0 +1,131 @@
+.slider_wrap {@include position-abs($width:698px, $height:398px, $right:64px, $top:50%);}
+.slider_cover {width:698px; height:398px; position:relative; overflow:hidden;
+    .icon_expand {@include position-abs($width:31px, $height:35px, $right:13px, $bottom:8px); @include bg($bg:"common/icon_expand.png");}
+}
+[data-gallery="wrap"] {font-size:0; letter-spacing:0; word-spacing:0; text-indent:0; position:absolute; white-space:nowrap;}
+[data-slider="list"] {display:inline-block; position:relative;}
+[data-paging="wrap"] {width:100%; text-align:right; text-indent:0; position:absolute; left:0; bottom:-30px; z-index:1;}
+[data-paging="list"] {margin-left:3px; width:42px; height:4px; display:inline-block; line-height:30px; background-color:rgba(255, 255, 255, 0.5);
+    &:first-child {margin-left:0;}
+}
+[data-paging="list"]>button {width:100%; height:100%; display:block; font-size:0;}
+[data-paging="list"].on {background-color:#e10b0b;}
+[data-paging="list"].on>button {color:#fff;}
+
+.expand_wrap {width:100%; height:100%; @include hide-text; position:relative; background-color:#000; overflow:hidden;}
+.expand_wrap>li {position:absolute; overflow:hidden; background-color:#000;}
+.expand_wrap>li.exp_con1 {top:0; bottom:0; left:0; right:50%;
+    &:before {content:""; width:1px; height:100%; display:block; position:absolute; right:0; top:0; background-color:#363636; z-index:2;}
+    >strong  {@include position-abs($width:208px, $height:39px, $left:50%, $top:50%); @include bg($bg:"contents/thumb1_tit_off.png");}
+    .exp_con1_over {display:block; position:absolute; left:0; top:0; right:0; bottom:0; @include bg($bg:"contents/thumb1_bg_on.jpg", $position:center); background-size:cover; z-index:1;
+        .thumb1_cht {@include position-abs($width:1604px, $height:1562px, $left:50%, $top:50%); margin:-957px 0 0 -918px; @include bg($bg:"contents/thumb1_cht.png");}
+        strong {@include position-abs($width:226px, $height:101px, $left:50%, $top:50%); margin:126px 0 0 183px; @include bg($bg:"contents/thumb1_tit_on.png");}
+    }
+}
+.expand_wrap>li.exp_con2 {bottom:50%; left:50%; top:0; right:0;
+    >strong  {@include position-abs($width:208px, $height:39px, $left:50%, $top:50%); @include bg($bg:"contents/thumb2_tit_off.png");}
+    .exp_con2_over {display:block; position:absolute; left:0; top:0; right:0; bottom:0; @include bg($bg:"contents/thumb2_bg_on.jpg", $position:center); background-size:cover; z-index:1;
+        .thumb2_cht {@include position-abs($width:662px, $height:1009px, $left:50%, $top:50%); margin:-224px 0 0 -491px; @include bg($bg:"contents/thumb2_cht.png");}
+        strong {@include position-abs($width:226px, $height:103px, $left:50%, $top:50%); margin:-16px 0 0 82px; @include bg($bg:"contents/thumb2_tit_on.png");}
+    }
+}
+.expand_wrap>li.exp_con3 {top:50%; left:50%; right:0; bottom:0;
+    &:before {content:""; width:100%; height:1px; display:block; position:absolute; left:0; top:0; background-color:#363636; z-index:2;}
+    >strong  {@include position-abs($width:203px, $height:39px, $left:50%, $top:50%); @include bg($bg:"contents/thumb3_tit_off.png");}
+    .exp_con3_over {display:block; position:absolute; left:0; top:0; right:0; bottom:0; @include bg($bg:"contents/thumb3_bg_on.jpg", $position:center); background-size:cover; z-index:1;
+        .thumb3_cht {@include position-abs($width:587px, $height:1362px, $left:50%, $top:50%); margin:-247px 0 0 -437px; @include bg($bg:"contents/thumb3_cht.png");}
+        strong {@include position-abs($width:222px, $height:105px, $left:50%, $top:50%); margin:-33px 0 0 27px; @include bg($bg:"contents/thumb3_tit_on.png");}
+    }
+}
+.expand_wrap>li>.exp_bg {width:100%; height:100%; display:block; transform:scale(1.3);}
+.expand_wrap>li.exp_con1>.exp_bg {@include bg($bg:"contents/thumb1_bg_off.jpg", $position:center); background-size:cover;}
+.expand_wrap>li.exp_con2>.exp_bg {@include bg($bg:"contents/thumb2_bg_off.jpg", $position:center); background-size:cover;}
+.expand_wrap>li.exp_con3>.exp_bg {@include bg($bg:"contents/thumb3_bg_off.jpg", $position:center); background-size:cover;}
+
+.expand_wrap>li.exp_con1>.exp_badge {@include position-abs($width:98px, $height:68px, $left:0, $top:88px); @include bg($bg:"contents/badge.jpg");}
+.expand_wrap>li.exp_con3>.exp_badge {@include position-abs($width:98px, $height:68px, $left:0, $top:0); @include bg($bg:"contents/badge.jpg");}
+
+.expand_wrap>li>.contents_layer {display:block; opacity:0; @include position-abs($width:100%, $height:100%, $left:0, $top:0, $right:0, $bottom:0); z-index:1;
+    .player {width:100%; height:100%; position:absolute;}
+    .contents_player {
+        &:before {content:""; display:block; @include position-abs($width:100%, $height:100%, $left:0, $top:0); @include bg($bg:"contents/movie_mask.png", $repeat:repeat); z-index:2;}
+    }
+    .contents_layer_wrap {@include position-abs($width:100%, $height:100%, $left:0, $top:0, $right:0, $bottom:0); z-index:3;}
+}
+.expand_wrap>li.exp_con1>.contents_layer {
+    .layer1_cht {@include position-abs($width:925px, $height:882px, $left:69px, $top:50%); margin-top:-477px; @include bg($bg:"contents/layer1_cht.png");}
+    .layer1_fx1 {@include position-abs($width:756px, $height:680px, $left:-211px, $top:50%); margin-top:-242px; @include bg($bg:"contents/layer1_fx1.png");}
+    .layer1_fx2 {@include position-abs($width:457px, $height:464px, $left:-194px, $top:50%); margin-top:-291px; @include bg($bg:"contents/layer1_fx2.png");}
+    .layer1_tit {@include position-abs($width:500px, $height:178px, $left:557px, $top:50%); @include bg($bg:"contents/layer1_tit.png");}
+}
+.expand_wrap>li.exp_con2>.contents_layer {
+    .layer2_cht {@include position-abs($width:450px, $height:627px, $left:0, $top:50%); margin-top:-396px; @include bg($bg:"contents/layer2_cht.png");}
+    .layer2_tit {@include position-abs($width:465px, $height:150px, $left:416px, $top:50%); @include bg($bg:"contents/layer2_tit.png");}
+}
+.expand_wrap>li.exp_con3>.contents_layer {@include bg($bg:"contents/layer3_bg.jpg", $position:center); background-size:cover;
+    .layer3_cht {@include position-abs($width:632px, $height:1030px, $left:50%, $top:50%); margin:-430px 0 0 -784px; @include bg($bg:"contents/layer3_cht.png"); z-index:1;}
+    .layer3_tit_bg {@include position-abs($width:863px, $height:441px, $left:50%, $top:50%); margin:-231px 0 0 -447px; @include bg($bg:"contents/layer3_tit_bg.png");}
+    .layer3_tit {@include position-abs($width:229px, $height:118px, $left:333px, $top:105px); @include bg($bg:"contents/layer3_tit.png");}
+    .layer3_stit {@include position-abs($width:519px, $height:64px, $left:186px, $top:254px); @include bg($bg:"contents/layer3_stit.png");}
+}
+
+.fade_layer {display:none; @include position-abs($width:100%, $height:100%, $left:0, $top:0); background:#000; z-index:302;
+    .fade_arrow {
+        font-size:0; @include position-abs($width:49px, $height:120px, $top:50%); @include bg($bg:"media/btn_prevnext.png"); z-index:10;
+        &.fade_prev {
+            left:57px;
+        }
+        &.fade_next {
+            right:57px; transform:rotate(180deg);
+        }
+    }
+    .fade_wrap {width:100%; height:100%; position:relative;
+        li {@include position-abs($width:100%, $height:100%, $left:0, $top:0);}
+    }
+    .fade_close {font-size:0; @include position-abs($width:49px, $height:49px, $right:40px, $top:70px); @include bg($bg:"contents/fade_close.png");}
+}
+
+#sliderGallery1Pop {
+    .fade_wrap {
+        li {
+            &:nth-child(1) {@include bg($bg:"contents/fade_layer1_img1.jpg", $position:center); background-size:cover;}
+            &:nth-child(2) {@include bg($bg:"contents/fade_layer1_img2.jpg", $position:center); background-size:cover;}
+            &:nth-child(3) {@include bg($bg:"contents/fade_layer1_img3.jpg", $position:center); background-size:cover;}
+        }
+    }
+}
+
+#sliderGallery2Pop {
+    .fade_wrap {
+        li {
+            &:nth-child(1) {@include bg($bg:"contents/fade_layer2_img1.jpg", $position:center); background-size:cover;}
+            &:nth-child(2) {@include bg($bg:"contents/fade_layer2_img2.jpg", $position:center); background-size:cover;}
+            &:nth-child(3) {@include bg($bg:"contents/fade_layer2_img3.jpg", $position:center); background-size:cover;}
+        }
+    }
+}
+
+.layer_close {width:44px; height:44px; font-size:0; display:block; position:absolute; right:40px; top:120px;
+    transition:1s;
+}
+.layer_close:before, .layer_close:after{
+    transition:1s;
+}
+.layer_close:before, .layer_close:after {content:""; margin:-1px 0 0 -22px; width:44px; height:2px; position:absolute; left:50%; top:50%; background:#fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.layer_close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.layer_close:hover {
+    -webkit-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+.layer_close:hover:before, .layer_close:hover:after  {
+    background:#ffdd80;
+}

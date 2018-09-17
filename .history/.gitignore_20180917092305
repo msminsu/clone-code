@@ -1,0 +1,11 @@
+node_modules/
+.idea/
+package-lock.json
+.DS_Store
+.editorconfig
+*/dist/
+!/**/_src/**/*
+document/lib/js/
+document/lib/css/
+document/lib/img/
+document/dev/

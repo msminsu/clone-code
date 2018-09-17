@@ -1,0 +1,61 @@
+#scene-1 {background:#000;}
+.main_wrap {@include position-abs($width:100%, $height:100%, $left:0, $top:0);
+    .player {width:100%; height:100%;}
+    .main_player {
+        &:before {content:""; display:block; @include position-abs($width:100%, $height:100%, $left:0, $top:0); @include bg($bg:"main/movie_mask.png", $repeat:repeat); z-index:2;}
+    }
+    .main_con_wrap {@include position-abs($width:438px, $height:435px, $left:50%, $top:50%); margin-top:-298px; z-index:3;
+        .main_tit {margin:0; @include position-abs($width:740px, $height:380px, $left:-161px, $top:-17px); z-index:1; backface-visibility:hidden;}
+        //.main_tit {margin:0; @include position-abs($width:438px, $height:283px, $left:0, $top:0); @include bg($bg:"main/main_tit.png"); z-index:1;}
+        .main_stit {@include position-abs($width:195px, $height:61px, $left:149px, $top:203px); @include bg($bg:"main/main_stit.png");}
+        .btn_play {@include position-abs($width:76px, $height:76px, $left:177px, $top:330px); z-index:1;
+            span {width:100%; height:100%; display:block; border:1px solid rgba(255, 255, 255, 0.1); transform:rotate(45deg); transition:0.7s;
+                &:before {content:""; display:block; @include position-abs($width:106px, $height:106px, $left:-16px, $top:-16px); @include bg($bg:"common/btn_play.png"); transform:rotate(135deg); transition:0.5s;}
+                &:after {content:""; display:block; width:0; height:0; position:absolute; left:30px; top:20px; border-top:13px solid transparent; border-bottom:13px solid transparent; border-left:23px solid #fff; transform:rotate(-45deg);}
+                &:hover {border:1px solid rgba(255, 255, 255, 0.5);}
+                &:hover:before {transform:scale(1.18); /*transform:rotate(315deg);*/}
+            }
+        }
+    }
+    .cht_gon_wrap {@include position-abs($width:553px, $height:1129px, $left:46px, $top:25px); opacity:0; z-index:2;
+        span {display:block; position:absolute; lcht_gon_wrapeft:0; top:0;}
+        .cht_gon {width:100%; height:100%; @include bg($bg:"main/cht_gon.png"); z-index:1;}
+        .gon_fire1 {width:970px; height:1137px; left:-467px; top:-30px; @include bg($bg:"main/gon_fire1.png");}
+        .gon_fire2 {width:551px; height:677px; left:182px; top:268px; @include bg($bg:"main/gon_fire2.png");}
+        .gon_fire3 {width:900px; height:552px; left:-284px; top:601px; @include bg($bg:"main/gon_fire3.png"); z-index:1;}
+    }
+    .cht_jin_wrap {@include position-abs($width:652px, $height:1189px, $left:8px, $top:44px); opacity:0; z-index:2;
+        span {display:block; position:absolute; left:0; top:0;}
+        .cht_jin {width:100%; height:100%; @include bg($bg:"main/cht_jin.png"); z-index:1;}
+        .jin_fire1 {width:910px; height:1137px; left:-250px; top:-259px; @include bg($bg:"main/jin_fire1.png");}
+        .jin_fire2 {width:791px; height:702px; left:23px; top:300px; @include bg($bg:"main/jin_fire2.png");}
+        .jin_fire3 {width:900px; height:552px; left:-294px; top:568px; @include bg($bg:"main/jin_fire3.png"); z-index:1;}
+        .jin_lightning {width:147px; height:938px; left:419px; top:108px; @include bg($bg:"main/jin_lightning.png"); z-index:1;}
+    }
+    .btn_preorder {@include position-abs($width:455px, $height:119px, $left:50%, $bottom:209px); @include bg($bg:"main/btn_preorder.png"); z-index:3;}
+    .nowupdate {@include position-abs($width:373px, $height:93px, $left:50%, $bottom:209px); @include bg($bg:"main/nowupdate.png"); z-index:3;}
+    .etc_menu {text-align:right; @include position-abs($width:100%, $height:53px, $right:29px, $bottom:36px); z-index:400;
+        >li {margin-left:7px; height:46px; display:inline-block; text-align:center; background-color:rgba(0, 0, 0, 0.33); border:1px solid #5d5d5d;
+            &:first-child {margin-left:0;}
+            &.menu1 {width:123px;}
+            &.menu2 {width:151px;}
+            &.menu3 {width:170px; background-color:rgba(255, 255, 255, 0.15);}
+            &:hover {border:1px solid #fff;
+                a {color:#bfbebe;}
+            }
+            >a {width:100%; height:100%; display:table; font-size:12px; color:#7c7c7c; text-decoration:none;
+                transition: 0.5s ease;
+                >span {display:table-cell; vertical-align:middle;}
+            }
+        }
+    }
+}
+.scroll_txt {@include position-abs($width:65px, $height:34px, $left:50%, $bottom:116px); @include bg($bg:"main/scroll_down.png"); z-index:2;}
+
+.layer_movie {display:none; @include position-abs($left: 0, $top: 0, $right: 0, $bottom: 0); background:rgba(0,0,0,0.8); z-index:500;
+    #movieBox {
+        .moovie_close {right:20px; top:20px; z-index:4;}
+        @include position-abs($width:1280px, $height:720px, $left:50%, $top:50% );
+        iframe{ width:100%; height:100%; }
+    }
+}
